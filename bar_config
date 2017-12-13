@@ -1,0 +1,88 @@
+
+[colors]
+fg = ${xrdb:color7}
+bg = #00ffffff
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+
+[bar/top]
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+line-size = 3
+line-color = #f00
+
+modules-left = i3
+modules-center = date
+modules-right = memory
+
+padding-left = 2
+padding-right = 2
+font-0 = FontAwesome:size=8;0
+module-margin = 1.5
+font-1 = Roboto:pixelsize=9;2
+
+[module/i3]
+
+type = internal/i3
+label-underline = ${colors.color3}
+pin-workspaces = true
+format = <label-mode><label-state>
+
+label-mode-padding = 2
+label-mode-underline = ${colors.color2}
+label-focused = %icon%
+label-focused-foreground = #ffffff
+; label-focused-background = #3f3f3f
+label-focused-underline = ${colors.color3}
+label-focused-padding = 2
+
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+abel-urgent = %icon%
+label-urgent-foreground = #000000
+label-urgent-background = ${colors.color3}
+label-urgent-padding = 2
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-default =  
+
+[module/date]
+type = internal/date
+interval = 1
+
+
+date = %a %d.%m
+time = %H:%M
+
+label = %time% | %date%
+
+label-underline = ${colors.color3}
+
+[module/memory]
+type = internal/memory
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3
+
+format = <label>
+label =   %gb_used%
+
+bar-used-indicator =
+bar-used-width = 50
+bar-used-foreground-0 = color5
+bar-used-foreground-1 = color1
+bar-used-foreground-2 = color2
+bar-used-foreground-3 = color3
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #444444
